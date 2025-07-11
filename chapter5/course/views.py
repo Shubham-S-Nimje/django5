@@ -8,3 +8,9 @@ def home(req):
 
 def courseHome(req):
     return render(req, 'course/index.html')
+
+def courseAbout(req):
+    return render(req, 'course/about.html')
+
+def courseUser(req):
+    return render(req, 'course/user.html')

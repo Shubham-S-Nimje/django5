@@ -4,11 +4,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="{% block csslink %}{% static 'course/css/style.css' %}{% endblock csslink %}"
+    />
+    <link rel="stylesheet" href="{% static 'course/css/main.css' %}" />
     <title>{% block title %}My Site{% endblock title %}</title>
   </head>
   <body>
-    <header>{% block heading %}{% endblock heading %}</header>
+    <header class="container mx-auto bg-gray-300">
+      <div class="flex justify-center gap-4 items-center py-2">
+        {% comment %} <a href="/chapter5">Home</a>
+        <a href="user">User</a>
+        <a href="about">About</a> {% endcomment %}
+        <a href="/chapter5">Home</a>
+        <a href="{% url 'user' %}">User</a>
+        <a href="{% url 'about'%}">About</a>
+      </div>
+    </header>
+    {% block heading %}{% endblock heading %}
     <br />
     <main>{% block content %}{% endblock content %}</main>
     <script src="{% static 'course/js/scripts.js' %}"></script>
