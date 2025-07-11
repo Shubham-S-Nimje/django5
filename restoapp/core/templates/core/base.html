@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% comment %}
+    <link
+      rel="stylesheet"
+      href="{% block csslink %}{% static 'core/css/style.css' %}{% endblock csslink %}"
+    />
+    {% endcomment %}
+    <link rel="stylesheet" href="{% static 'core/css/main.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{% block title %}My Site{% endblock title %}</title>
+  </head>
+  <body>
+    {% include 'core/components/header.html' %}
+    <!>
+    {% block hero %}{% endblock hero %}
+    <!>
+    {% block heading %} {% endblock heading %}
+    <main>
+      {% block content %}{% endblock content %}
+      <!>{% block about %}{% endblock about %}
+      <!>{% block testimonials %}{% endblock testimonials %}
+    </main>
+    {% include 'core/components/footer.html' %}
+    <script src="{% static 'core/js/script.js' %}"></script>
+  </body>
+</html>
