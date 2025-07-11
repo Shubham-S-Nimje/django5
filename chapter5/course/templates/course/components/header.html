@@ -1,0 +1,10 @@
+<header class="container mx-auto bg-gray-300">
+  <div class="flex justify-center gap-4 items-center py-2">
+    {% comment %} <a href="/chapter5">Home</a>
+    <a href="user">User</a>
+    <a href="about">About</a> {% endcomment %}
+    <a href="/chapter5">Home</a>
+    <a href="{% url 'user' %}">User</a>
+    <a href="{% url 'about'%}">About</a>
+  </div>
+</header>
