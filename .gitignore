@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual Environments
+.env/
+.venv/
+env/
+venv/
+
+# VSCode or IDE folders
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Django SQLite databases
+**/db.sqlite3
+
+# Django migrations (optional, if you don’t want to track them initially)
+**/migrations/
+!**/migrations/__init__.py
+
+# Jupyter Notebook checkpoints (if any)
+.ipynb_checkpoints/
+
+# Pip environment files (optional)
+pip-log.txt
+
+# Environment variables
+.env.local
+.env.*.local
+*.env
+
+# Pytest / coverage
+htmlcov/
+.coverage
+.cache/
+pytest_cache/
+
+# MyPy / Pyright / Pylint
+.mypy_cache/
+.pyright/
+pylint-report.txt
