@@ -15,9 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from app1.views import myfunction, home, app1Home
-from app2.views import app2Home
+from app2.views import app2Home, app2Status
 
 urlpatterns = [
     path('', home, name="Home"),
@@ -25,4 +25,6 @@ urlpatterns = [
     path('chapter1/', myfunction, name="Chapter1 app1"),
     path('chapter1/app1', app1Home, name="Chapter1 app1"),
     path('chapter1/app2', app2Home, name="Chapter1 app2"),
+    path('chapter1/app2/status', app2Status, {'status': 'OK'}, name="Chapter1 app2"),
+    path('chapter1/app3', include('app3.urls'), name="Chapter1 app3"),
 ]
