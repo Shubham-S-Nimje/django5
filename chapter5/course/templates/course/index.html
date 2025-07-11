@@ -1,17 +1,21 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'course/css/style.css'%}" />
-    <title>Chapter5 Course Home</title>
-  </head>
-  <body>
-    <h1>Chapter5 Course Home</h1>
-    <img src="{% static "course/images/avatar.jpg" %}" alt="avatar">
-    <br />
-    <input type="button" value="click me" onclick="disp()" />
-    <script src='{% static "course/js/scripts.js" %}'></script>
-  </body>
-</html>
+{% extends "course/base.html" %} {% load static %}
+<br />
+{% block title %}Chapter5 Course Home {% endblock title %}
+<br />
+{% block heading %}
+<h1>Chapter5 Course Home</h1>
+{% endblock heading %}
+<br />
+{% block content %}
+<div>
+  <img src="{% static "course/images/avatar.jpg" %}" alt="avatar">
+  <br />
+  <img
+    src="{% get_static_prefix %}course/images/avatar.jpg"
+    alt="avatar"
+    width="300px"
+  />
+  <br />
+  <input type="button" value="click me" onclick="disp()" />
+</div>
+{% endblock content %}
