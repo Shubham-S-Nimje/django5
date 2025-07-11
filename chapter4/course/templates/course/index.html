@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter4 Course Home</title>
+  </head>
+  <body>
+    <h1>Hello Django Template Language</h1>
+    <hr />
+    <h2>Example1 - Variable</h2>
+    <h3>{{course_details.chapterName}}</h3>
+    <hr />
+    <h2>Example2 - Filter</h2>
+    <h3><em>Upper: </em>{{course_details.chapterName|upper}}</h3>
+    <h3>
+      <em>Truncate Words: </em>{{course_details.chapterName|truncatewords:1}}
+    </h3>
+    <h3>
+      <em>Upper + Truncate Words: </em
+      >{{course_details.chapterName|upper|truncatewords:1}}
+    </h3>
+    <h3>
+      <em>Truncate Charecters: </em
+      >{{course_details.chapterName|truncatechars:15}}
+    </h3>
+    <h3>
+      <em>Upper + Truncate Charecters: </em
+      >{{course_details.chapterName|upper|truncatechars:15}}
+    </h3>
+    <hr />
+    <h2>Example3 - Datetime</h2>
+    <h3>{{datetime}}</h3>
+    <hr />
+    <h2>Example4 - IF Tag</h2>
+    {%if datetime %}
+    <h3>{{datetime|date}}</h3>
+    {% endif %}
+    <hr />
+    <h2>Example5 - for loop Tag</h2>
+    {%for name in names %}
+    <h3>{{name|upper}}</h3>
+    {% endfor %}
+  </body>
+</html>
