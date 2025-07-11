@@ -4,16 +4,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="{% block csslink %}{% static 'course/css/style.css' %}{% endblock csslink %}"
-    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>{% block title %}My Site{% endblock title %}</title>
   </head>
   <body>
-    {% block heading %}{% endblock heading %}
+    <header>{% block heading %}{% endblock heading %}</header>
     <br />
-    {% block content %}{% endblock content %}
+    <main>{% block content %}{% endblock content %}</main>
     <script src="{% static 'course/js/scripts.js' %}"></script>
   </body>
 </html>

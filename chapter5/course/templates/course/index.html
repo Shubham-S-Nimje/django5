@@ -1,23 +1,29 @@
 {% extends "course/base.html" %} {% load static %}
 <br />
-{% block csslink %} {% static 'course/css/index.css' %}{% endblock csslink %}
-<br />
 {% block title %}Chapter5 Course Home {% endblock title %}
 <br />
 {% block heading %}
-<h1>Chapter5 Course Home</h1>
+<h1 class="text-2xl font-bold text-center my-4">Chapter5 Course Home</h1>
 {% endblock heading %}
 <br />
 {% block content %}
-<div>
-  <img src="{% static "course/images/avatar.jpg" %}" alt="avatar">
-  <br />
-  <img
-    src="{% get_static_prefix %}course/images/avatar.jpg"
-    alt="avatar"
-    width="300px"
+<div class="container mx-auto">
+  <div class="flex justify-center gap-8 items-center">
+    <img src="{% static "course/images/avatar.jpg" %}" alt="avatar" class="w-1/4
+    mb-4">
+    <br />
+    <img
+      src="{% get_static_prefix %}course/images/avatar.jpg"
+      alt="avatar"
+      class="w-1/4 mb-4"
+    />
+  </div>
+  <hr />
+  <input
+    class="text-lg bg-white border rounded-lg px-4 py-2 my-4 shadow"
+    type="button"
+    value="click me"
+    onclick="disp()"
   />
-  <br />
-  <input type="button" value="click me" onclick="disp()" />
 </div>
 {% endblock content %}
